@@ -1,4 +1,4 @@
-
+//Client
 #include <iostream>
 #include <boost/array.hpp>
 #include <boost/asio.hpp>
@@ -28,6 +28,7 @@ int main(int argc, char* argv[]) {
             socket.send_to(boost::asio::buffer(send_buf), receiver_endpoint);
 
             udp::endpoint sender_endpoint;
+
             size_t len = socket.receive_from(
                 boost::asio::buffer(recv_buf), sender_endpoint);
             std::cout.write(recv_buf.data(), len);
